@@ -9,7 +9,7 @@ function main()
 	rate = 0.08
 	volatility = 0.30
 	dividend = 0.0
-	nreps::Int64 = 10000000
+	nreps::Int64 = 100
 
 	dt = expiry
 	nudt = (rate - dividend - 0.5 * volatility * volatility) * dt
@@ -20,6 +20,7 @@ function main()
 	call_t = zeros(nreps)
 
 	for i in 1:nreps
+		println(z[i])
 		spot_t[i] = spot * exp(nudt + sigsdt * z[i])
 		call_t[i] = callPayoff(spot_t[i], strike)
 	end
