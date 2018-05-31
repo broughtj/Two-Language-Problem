@@ -39,7 +39,12 @@ def printSummary(inst):
 
 json = getJson(url_instrunments)
 
-for obj in json["result"]:
-	printSummary(obj["instrumentName"])
+#for obj in json["result"]:
+#	printSummary(obj["instrumentName"])
 
+count = 0
+for obj in json["result"]:
+	-printSummary(obj["instrumentName"])
+#	count+=1
+#print(count)
 #printSummary("BTC-29JUN18-30000-C")
